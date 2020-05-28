@@ -1,0 +1,166 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	background: url(image/Seigaha-Wave-motif-Furoshiki.jpg) repeat;
+}
+a{
+	text-decoration: none;
+	color: #fff;
+}
+
+#wrap-content{
+	width: 960px;
+	margin: 0 auto;
+	background-color: red;
+	outline: 3px solid #fff;
+}
+
+
+
+/*--header--*/
+#wrap-content #header{
+	width: 100%;
+	height: 200px;
+	background: url(image/header.jpg) no-repeat;
+	-webkit-border-radius: 0 0 15px 15px;
+	border: 1px solid black;
+}
+#wrap-content #header #logo-text{
+	width: 100%;
+	height: 50px;
+	background-color: black;
+	-webkit-border-radius: 25px 25px 25px 25px;
+}
+#wrap-content #header a h1{
+	text-align: center;
+	font-size:36px;
+	color: #fff;
+}
+#wrap-content #header a:hover h1{
+	color: red;
+	-webkit-transition: all 1s;
+}
+#wrap-content #header img{
+	width: 100px;
+	height: 100px;
+	margin-left: 430px;
+}
+/*--wrap-image--*/
+/*#wrap-content #wrap-image{
+	position: absolute;
+	z-index: 10px;
+	width: 960px;
+	min-height: 1024px;
+	background: url(image/hoa.png) center no-repeat;
+	margin: 51px auto;
+	position: fixed;
+}*/
+/*--menu--*/
+ul{
+	list-style-type: none;
+}
+#wrap-content #menu{
+	width: 100%;
+	height: 51px;
+	background-color: black;
+	-webkit-border-radius: 15px 15px 15px 15px;
+	margin-top: 100px;
+}
+#wrap-content #menu ul li{
+	display: inline-block;
+	float: left;
+	width: 237.5px;
+	height: 50px;
+	line-height: 50px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+	color: #fff;
+	text-align: center;
+	position:relative;
+}
+#wrap-content #menu ul #home{
+	border-left: 1px solid black;
+	-webkit-border-radius: 15px 0 0 15px;
+}
+#wrap-content #menu ul #mini-project{
+	-webkit-border-radius: 0 15px 15px 0;
+	width: 241px;
+}
+#wrap-content #menu ul a:hover li{
+	background-color: red !important;
+	-webkit-transition: all 1s !important;
+	color: black !important;
+}
+/*--lock-menu--*/
+/*#wrap-content #header{
+	width: 960px;
+	height: 200px;
+	margin: 0 auto;
+	position: fixed;
+	/*margin-bottom: 200px;*/
+	/*top: 0;
+}*/
+/*--content--*/
+
+/*home-conntent--*/
+#wrap-content #content #home-content{
+	width: 100%;
+	min-height: 400px;
+	background-color: #fff;
+	border: 1px solid black;
+	-webkit-border-radius: 15px 15px 15px 15px;
+	text-align: center;
+	background: url(image/home.jpg) no-repeat;
+}
+#wrap-content #content #home-content h2{
+	margin-top: 150px;
+}
+#wrap-content #content #home-content p{
+	color: #fff;
+	font-size: 16px;
+}
+
+/*--html-content--*/
+#wrap-content #content #html-content{
+	width: 100%;
+	min-height: 400px;
+	background-color: #fff;
+	border: 1px solid black;
+	-webkit-border-radius: 15px 15px 15px 15px;
+}
+/*--css-content--*/
+#wrap-content #content #css-content{
+	width: 100%;
+	min-height: 400px;
+	background-color: #fff;
+	border: 1px solid black;
+	-webkit-border-radius: 15px 15px 15px 15px;
+}
+/*--mini-project--*/
+#wrap-content #content #mini-project-content{
+	width: 100%;
+	min-height: 400px;
+	background-color: #fff;
+	border: 1px solid black;
+	-webkit-border-radius: 15px 15px 15px 15px;
+}
+
+/*--footer--*/
+#footer{
+	width: 100%;
+	height: 150px;
+	position: fixed;
+	background-color: red;
+	bottom: 0;
+	border: 1px solid black;
+	-webkit-border-radius: 15px 15px 0 0;
+	background: url(image/footer3.png) center no-repeat;
+}
+
