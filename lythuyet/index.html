@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>1910127_Nhu_Van_Huu_Lab01</title>
+
+<style>
+
+body {
+
+background-color: # 63B8FF;
+margin: 0 15%;
+font-family: sans-serif;
+}
+
+h1 {
+text-align: center;
+font-family: serif;
+font-weight: bold;
+text-transform: uppercase;
+color: #00676B;
+}
+
+h2 {
+text-align: center;
+font-family: serif;
+font-weight: normal;
+text-transform: uppercase;
+color: #00A6AD;
+}
+
+h3 {
+color: #528B8B;
+}
+
+
+
+.center {
+text-align: center;
+}
+
+em {
+color: blue;
+}
+.note {
+
+color: red;
+}
+.Buoc {
+color=red;
+}
+</style>
+
+</head>
+
+<body>
+<article>
+<header>
+<h1>꧁DNS & Registering DN꧂</h1>
+
+<section class="center">
+<p>Đọc các bài viết về DNS</p>
+<nav>
+<ol>
+<li><a href="http://legiacong.blogspot.com/2015/03/cai-dat-va-cau-hinh-windows-server-2012.html">Bài viết số 1.</a></li>
+<li><a href="http://legiacong.blogspot.com/2015/03/cai-dat-va-cau-hinh-windows-server-2012_8.html">Bài viết số 2.</a></li>
+<li><a href="http://legiacong.blogspot.com/2015/03/cai-dat-va-cau-hinh-windows-server-2012_14.html">Bài viết số 3.</a></li>
+<li><a href="http://legiacong.blogspot.com/2015/03/cai-dat-va-cau-hinh-windows-server-2012_18.html">Bài viết số 4.</a></li>
+</ol>
+</nav>
+</section>
+</header>
+<hr>
+<section>
+</article>
+<article>
+<h2>Lab 1. Hiểu về DNS</h2>
+<br>
+<h3>1. DNS là viết tắt của các chữ nào?</h3>
+
+<p>Hệ thống phân giải tên miền (hay được viết tắt là DNS do tên tiếng Anh Domain Name System) là một hệ thống cho phép thiết lập tương ứng giữa địa chỉ IP và tên miền trên Internet.</p>
+
+<h3>2. DNS dùng để làm gì?</h3>
+
+<p>Mỗi website có một tên (là tên miền hay đường dẫn URL: Uniform Resource Locator) và một địa chỉ IP. Địa chỉ IP gồm 4 nhóm số cách nhau bằng dấu chấm(IPv4). Khi mở một trình duyệt Web và nhập tên website, trình duyệt sẽ đến thẳng website mà không cần phải thông qua việc nhập địa chỉ IP của trang web. Quá trình "dịch" tên miền thành địa chỉ IP để cho trình duyệt hiểu và truy cập được vào website là công việc của một DNS server. Các DNS trợ giúp qua lại với nhau để dịch địa chỉ "IP" thành "tên" và ngược lại. Người sử dụng chỉ cần nhớ "tên", không cần phải nhớ địa chỉ IP (địa chỉ IP là những con số rất khó nhớ).</p>
+
+<h3>3. Hãy truy cập 3 trang web mà không cần dùng tới tên miền (domain name)?</h3>
+
+<p>Thực hiện lệnh ping tên miền trong cửa sổ cmd, có được địa chỉ IP của tên miền, nhập địa chỉ IP vào đường dẫn của trình duyệt.
+
+Tuy nhiên, không phải khi nào cũng thực hiện được. Đọc thêm ở đây:</p>
+<p><a href="https://webmasters.stackexchange.com/questions/65349/should-a-website-be-directly-accessible-by-its-ip-address"><em>Trích dẫn tham khảo</em></a><p>
+
+<h3>4. Tên miền cấp 1, cấp 2, cấp 3 là gì? cho ví dụ mỗi loại?</h3>
+
+<p>Tên miền cấp 1 cũng là tên miền quốc tế, được dùng chung cho nhiều quốc gia, mỗi tên miền đại diện cho một lĩnh vực, một ngành nghề, hay một khu vực địa lý. Ví dụ: .com, .net, .org, .mil, .edu, .gov, .asia, .eu .</P>
+<p><em>Ví dụ: google.com;</em></p>
+
+<p>Tên miền cấp 2 cũng là tên miền quốc gia, thông thường mỗi quốc gia sẽ có một tên miền riêng, gồm hai kí tự. Ví dụ: .vn (Việt Nam), .cn (Trung Quốc), .uk (Anh), .us (Mỹ).</p>
+<p><em>Ví dụ: tiki.vn;</em></p>
+<p>Tên miền cấp 3 là tên miền kết hợp giữa tên miền cấp 2 và tên miền cấp 1. Ví dụ: .com.vn, .edu.vn, .edu.uk, .com.us</p>
+<p><em> dlu.edu.vn</em></p>
+<h3>5. Tên miền quốc tế là gì? cho 3 ví dụ?</h3>
+
+<p>Tên miền quốc tế: do Trung tâm quản lý tên miền quốc tế cấp, ví dụ thường có đuôi là .com, .net, .biz, .info, .org</p>
+<p><em>Ví dụ: google.com, facebook.com, vuighe.net,...</em></p>
+<h3>6. Tên miền “nội địa” hay quốc gia là gì? cho 3 ví dụ?</h3>
+
+<p>Tên miền quốc gia (nội địa): do Trung tâm quản lý tên miền của mỗi quốc gia quản lý. Ví dụ tên miền của Việt Nam có đuôi dạng .vn, .com.vn, edu.vn, gov.vn. Các tên miền này do VNNIC quản lý.</p>
+<p><em>Ví dụ: tiki.vn, webdoctor.vn, 1web.vn,...</em></p> 
+
+<h3>7. DNS server addresses trong cạc mạng máy tính dùng để làm gì? Tại sao lại có Preferred DNS server/Alternate DNS server?</h3>
+
+<p>Để thiết lập địa chỉ của máy phân giải tên miền. Một  cái chính và một cái dự phòng.</p>
+
+<h3>8. Trong cạc mạng, không điền thông tin trong DNS server, có truy cập được trang web không? chứng minh?</h3>
+
+<p>Cạc mạng sẽ tự động chuyển sang chế độ lấy DNS server address tự động</p>
+
+
+<p>Nếu cố tình gán một DNS server address không tồn tại thì không thể truy cập trang web</p>
+
+<h3>9. “8.8.8.8” là gì?</h3>
+
+<p>Là DNS server address của Google</p>
+
+<h3>10. Sau khi người dùng gõ vào trình duyệt https://www.w3schools.com/, gõ phím Enter.Viết lại quá trình một trình duyệt lấy trang web về?</h3>
+<ol>
+<li>Dựa vào thông tin DNS server address, gửi một gói tin để phân giải tên trang web sang IP</li>
+
+<li>Gửi một gói tin yêu cầu nội dung trang web (index.html) tới Web server</li>
+
+<li>Web server gửi nội dung trang web về cho máy client</li>
+
+
+<li>Máy client thông dịch (biên dịch) mã nguồn của trang web (HTML, CSS, JavaScript) rồi hiển thị lên trình duyệt</li>
+</ol>
+<h3>11. Thử cấu hình DNS server: sửa tập tin hosts để khi người dùng truy cập trang tuoitre.vn, nội dung trình duyệt sẽ hiển thị thông báo lỗi “không thể truy cập được trang tuoitre.vn”</h3>
+
+<em>Ví dụ: 1.1.1.1  tuoitre.vn</em>
+
+<p>Thông thường trong một địa chỉ IP sẽ được đặt nhiều tên miền trên đó (sẽ tìm hiểu kĩ hơn ở phần thiết lập web server), vì vậy, sẽ thực hiện việc chuyển hướng trang web sau phần tìm hiểu về web server.</p>
+
+<p>Ví dụ một phần trong tập tin hosts:</p>
+
+<p><em>127.0.0.1 www.ngvteo.com<br>
+127.0.0.1 thuatngucntt.com<br>
+127.0.0.1 localhost</em></p>
+
+<p>Ví dụ một đoạn mã cấu hình cho một trang web trên Apache:</p>
+
+<p> <em><VirtualHost *:80><br>
+    DocumentRoot "E:\WebRootYersin\NVTeo"<br>
+    ServerName www.ngvteo.com<br>
+
+</VirtualHost></em></p>
+</section>
+
+<hr>
+<section class="center">
+<header>
+<h1>꧁Đăng ký tên miền꧂</h1>
+
+<p>Kinh nghiệm lựa chọn tên miền:<br>
+<nav>
+<em><a href="https://www.wpbeginner.com/beginners-guide/tips-and-tools-to-pick-the-best-domain-for-your-blog/">Tham khảo kinh nghiệm tại đây.</a></em></p>
+</nav>
+</header>
+<ol>
+<li> Stick with .com</li>
+
+<li> Use keywords in your domain name search</li>
+
+<li> Keep your domain name short</li>
+
+<li> Make it easy to pronounce and spell</li>
+
+<li>Keep it unique and brandable</li>
+
+<li>Avoid hyphens in domain name</li>
+
+<li>Avoid doubled letters</li>
+
+<li>Leave room to expand</li>
+
+<li>Research your domain name</li>
+
+<li>Use domain generators for clever ideas</li>
+
+<li> Act quickly before someone else takes it</li>
+
+<li>Best place to register a domain name</li>
+
+<li>Get free domain with web hosting</li>
+
+
+<li>Most popular domain registrars</li>
+</ol>
+</section>
+</article>
+<hr>
+<article>
+<h2>Lab 2. Đăng ký tên miền miễn phí</h2>
+
+<h3>1. Tại sao lại phải đăng ký tên miền?</h3>
+
+<p>Xây dựng và bảo vệ thương hiệu</p>
+
+<p>Xây dựng website để quản lý, dạy học, làm việc, làm thương mại, quảng cáo, quảng bá thương hiệu</p>
+<p>Tận dụng triệt để các cơ hội, tiếp cận chiến lược quản cáo nhằm vào các mục tiêu và thị trường khác nhau</p>
+<p class="note">Như vậy những lợi ích mà ta có được khi đăng kí tên miền là:</p>
+<ul>
+<li>Tiếp cận, mở rộng thị trường hướng đến các khách hàng tiềm năng trên phạm vi lớn.</li>
+<li>Cung cấp đầy đủ thông tin cho khách hàng, nhanh chóng tiện lợi, hiệu quả.</li>
+<li>Giải quyết thắng mắc và yêu cầu của khách hàng một cách nhanh chóng hiệu quả.</li>
+<li>Cung cấp dịch vụ cho khách hàng đặt hàng, chon hàng mọi lúc mọi nơi.</li>
+<li>Kinh doanh mà không giới hạn pham vi địa lí.</li>
+<li>Dễ dàng theo dỗi phạm vi hiệu quả và phản hồi của khách hàng.</li>
+<li>Tiết kiệm chi phí cho marketing truyền thống.</li>
+<li>Tạo bộ mặt cho thương hiệu, gia tăng lợi thế cạnh tranh.</li>
+<li>Hướng đến việc thanh toán qua mạng.</li>
+</ul>
+<h3>2. Đăng ký 3 tên miền miễn phí trên 3 hệ thống khác nhau?</h3>
+
+<p>Một số trang web tham khảo:</p>
+<ul>
+
+<li>000webhostapp.com</li>
+
+<li>wordpress.com</li>
+
+<li>my.noip.com</li>
+
+<li>my.freenom.com</li>
+
+<li>somee.com</li>
+
+<li>blogspot.com</li>
+
+<li>biz.nf</li>
+</ul>
+</article>
+<hr>
+<article>
+<h2>Lab 3. Đăng ký tên miền có phí</h2>
+
+<h3>1. Tại sao nên đăng kí tên miền có phí?</h3>
+
+<p>Một số lý do:
+<br>
+<ol>
+<li>Tên miền miễn phí chỉ sử dụng được trong một khoảng thời gian nhất định, có thể bị mất bất cứ khi nào</li>
+
+<li>Tên miền miễn phí không nhận được hỗ trợ kĩ thuật</li>
+<li>Nếu bạn muốn đăng kí một tên miền, nó là không thể nếu tên miền đó đã được đăng kí trước bởi <em>một ai khác</em>. Trong trường hợp này, bạn sẽ phải mua lại quền sở  hữu từ <em>một ai khác</em> hoặc đợi đến khi quền sở hữu của họ hết hạn. Hoặc nếu bạn đã sở hữu một tên miền đắng hài lòng, việc giữ nó là cần thiết để đăng kí một tên miền có trả phí.</p>
+</ol></p>
+
+<h3>2. Khảo sát bảng giá khi đăng kí tên miền có phí từ 6 nhà cung cấp dịch vụ (3 nhà cung cấp trong nước, 3 nhà cung cấp nước ngoài)?</h3>
+<p>Tùy vào các đuôi ."..." của tên miền mà giá cả khác nhau, phí cho việc duy trì tên miền tròn thời gian 1 năm có thể từ vài trăm ngàn đến vài chục triệu (đối với ".blank")...
+
+<h3>3. Liệt kê các bước (thủ tục) để có thể đăng kí tên miền có phí?</h3>
+<p class="note">Đây là thủ tục đăng kí tên miên tại <em>bkns.vn</em>:</p>
+<ol>
+<li class="Buoc">Kiểm tra tên miền định đăng kí</li>
+<ul>
+<li>Tên miền quốc tế?</li>
+<li>Tên miền quốc gia?</li>
+<li>Đã được đăng kí chưa?</li>
+</ul>
+<li class="Buoc">Hoàn Thành các thủ tục đăng kí theo:</li>
+<ul>
+<li><b>Mẫu bản khai, hợp dồng</b>: dowload mẫu đơn và gửi qua mail.</li>
+<li><b>Online trên website <em>bkns.vn</em></b>: Chọn và nhấn nút đăng kí ở cuối menu.</li>
+</ul>
+<li class="Buoc">Nộp mẫu khai hợp, đồng tại <em>bkns.vn</em></li>
+</ol>
+<em>Như vậy việc đăng kí tên miền với phí quan trọng ở chổ:
+<br>
+<ol>
+<li>Tên miền là độc nhất.</li>
+<li>Chi phí phù hợp.</li>
+<li>Giao dịch minh bạch.</li>
+</ol>
+</em>
+</article>
+<hr>
+
+<article>
+<section class="center">
+<header>
+<h1>2.Hosting</h1>
+<p >Hosting là dịch vụ lưu trữ các trang web trên máy chủ kết nối Internet.</p>
+<h1>2.1 Tìm hiểu về websever</h1>
+</header>
+<h2>Lab04</h2>
+<a href="http://legiacong.blogspot.com/2016/10/ngu-ngo-hoc-lam-web-45-co-ban-ve-web.html">Tài liệu về websever.</a>
+
+</section>
+<h3>Yêu cầu 1: Websever là gì?</h3>
+<p>Máy chủ web (tiếng Anh: Web server) là từ được dùng để chỉ phần mềm máy chủ, hoặc phần cứng dành riêng để chạy các phần mềm trên máy chủ, để từ đó có thể cung cấp các dịch vụ World Wide Web. Một máy chủ web xử lí các yêu cầu (request) từ các client (trong mô hình server - client) thông qua giao thức HTTP và một số giao thức liên quan khác.</p>
+<h3> Yêu cầu 2: URL?</h3>
+<p>URL có thể chứa nhiều thành phần khác nhau. Nó bao gồm hostname (tên máy) ánh xạ tới địa chỉ IP của một tài nguyên cụ thể trên Internet và một loạt các thông tin bổ sung thông báo cho trình duyệt và máy chủ biết cách xử lý mọi thứ. Bạn có thể nghĩ địa chỉ IP như số điện thoại, hostname như tên của người sở hữu số điện thoại đó mà bạn muốn tra cứu. Và một tiêu chuẩn được gọi là Hệ thống tên miền (Domain Name System - DNS) hoạt động trong nền giống như một cuốn danh bạ điện thoại, dịch các hostname thành địa chỉ IP để mạng sử dụng để định tuyến lưu lượng truy cập.</p>
+<p>Một URL đơn giản gồm 2 thành phần: 
+<dl>
+<ol>
+<li><dt>Scheme(giao thức kết nối).</dt></li>
+<dd>
+<ul>
+<li><b>Giao thức truyền tải siêu văn bản(HTML)</b>: Đây là giao thức cơ bản của web, xác định hành động của các máy chủ web và trình duyệt cần thực hiện để đáp ứng các lệnh nhất định.</li>
+<li><b>Giao thức HTTP an toàn (HTTPS):</b>Đây là một dạng HTTP hoạt động trên một lớp bảo mật, được mã hóa để truyền tải thông tin an toàn hơn.</li>
+<li><b>Giao thức truyền tập tin (File Transfer Protocol - FTP)</b>: Giao thức này thường được sử dụng để truyền file qua Internet.</li>
+</ul>
+</dd>
+<li><dt>Authority(nhà cung cấp)</dt></li>
+<dd>
+<p>Phần Authority của một URL (phần bắt đầu sau hai dấu gạch chéo) được chia thành các phần nhỏ. Hãy bắt đầu với một URL đơn giản, thường là URL dẫn bạn đến trang chủ của một trang web.</p>
+<em>Xét lấy ví dụ này: https://www.example.com </em>
+<p>Trong khi "https" là phần scheme thì phần còn lại thuộc về <em>Authority</em> với  cụm "www.example.com" là hostname.</p>
+<p class="note">Đây là một số thành phần của nó:<p>
+<ul>
+<li><b>Tên miền cao nhất</b>: Trong ví dụ ở đây, "com" là tên miền cấp cao nhất. Đây là mức cao nhất trong hệ thống tên miền phân cấp được sử dụng để dịch địa chỉ IP thành địa chỉ ngôn ngữ đơn giản, dễ nhớ. Những tên miền cấp cao nhất này được Tập đoàn Internet cấp số và tên miền (ICANN) tạo và quản lý. Có ba tên miền cấp cao nhất phổ biến là .com., .net, .gov. Hầu hết các quốc gia đều có trên miền cấp cao nhất gồm hai chữ cái, bạn sẽ thấy tên miền như .us (Mỹ), .vn (Việt Nam), .ca (Canada), v.v… Có một số tên miền cấp cao nhất bổ sung (như .museum) được các tổ chức cá nhân tài trợ và quản lý. Ngoài ra, cũng có một số tên miền cấp cao nhất dùng chung như.club, .life và .news.</li>
+<li><b>Tên miền phụ (Subdomain)</b>: Vì DNS là một hệ thống phân cấp, cả hai phần “www” và “example” của URL ví dụ trên được xem là tên miền phụ. Phần “www” là tên miền phụ của tên miền cấp cao nhất “com” và phần “www” là tên miền phụ của tên miền “example”. Đó là lý do tại sao bạn thấy công ty có tên đăng ký như “google.com” được chia thành các tên miền phụ như “www.google.com”, “news.google.com”, “mail.google.com”, v.v…</li>
+<p class="note">Phía trên là một số thành phần của một <em>Authority</em> đơn giản nhất, trong một số trường hợp còn có thể có các thành phần khác như:</p>
+<li><b>Thông tin người dùng</b>: Phần Authority cũng có thể chứa tên người dùng và mật khẩu của trang web bạn đang truy cập. Ngày nay, bạn có thể ít bắt gặp cấu trúc URL này. Phần thông tin người dùng ở trước tên máy chủ và nó theo sau bởi dấu @. Ví dụ, bạn có thể thấy một URL như sau: “//username:password@www.example.com”, bao gồm thông tin người dùng.</li>
+<li><b>Số cổng</b>: Thiết bị mạng sử dụng địa chỉ IP để nhận thông tin đến máy tính phù hợp trên mạng. Khi lưu lượng truy cập đến, số cổng thông báo với máy tính biết ứng dụng mà lưu lượng truy cập đó đang nhắm đến. Bạn thường không thấy số cổng khi lướt web, nhưng có thể thấy nó trong các ứng dụng mạng như trò chơi yêu cầu nhập URL. Nếu URL chứa số cổng, nó xuất hiện ở sau tên máy chủ và trước dấu hai chấm. Bạn sẽ thấy nó trông giống như vậy: “//www.example.com:8080”.</li>
+</ul>
+</dd>
+<dt><li>Thành phần bổ sung của URL</li><dt>
+<dd>
+<ul>
+<li><b>Đường dẫn (path)</b>:Phần Authority của URL đưa trình duyệt (hoặc các ứng dụng khác) đến đúng máy chủ trên mạng. Đường dẫn (hoạt động như đường dẫn trong Windows, macOS hoặc Linux) đưa bạn đến đúng thư mục hoặc file trên máy chủ đó. Phần cuối cùng là tên file sẽ được mở khi truy cập vào trang web. Mặc dù có thể bạn không thấy đường dẫn này trên thanh địa chỉ, nhưng điều đó không có nghĩa là nó không có. Một vài ngôn ngữ được sử dụng để tạo trang web ẩn tên và phần mở rộng của file để người dùng dễ nhớ và gõ URL hơn.</li>
+<li><b>Truy vấn (query)</b>: Phần truy vấn của một URL được sử dụng để xác định những thứ không phải là thành phần của một cấu trúc đường dẫn cố định. Thông thường, bạn sẽ thấy chúng được sử dụng để thực hiện tìm kiếm hoặc khi trang web phân phối dữ liệu thông qua biểu mẫu. Phần truy vấn này được bắt đầu bằng dấu hỏi chấm và theo sau đường dẫn (hoặc sau tên máy chủ nếu không có đường dẫn).</li>
+<li><b>Phân mảnh (fragment)</b>: Thành phần cuối cùng của URL mà bạn có thể thấy được gọi là phân mảnh. Phân mảnh được bắt đầu bằng một dấu thăng (#) và được sử dụng để xác định vị trí cụ thể của trang web. Khi viết code cho một trang web, các nhà thiết kế có thể tạo liên kết neo (anchor) cho văn bản cụ thể như tiêu đề. Khi sử dụng một phân mảnh thích hợp ở cuối URL, trình duyệt của bạn sẽ tải trang và sau đó chuyển đến liên kết neo đó. Liên kết neo và URL cùng với phân mảnh thường được sử dụng để tạo mục lục trang web giúp điều hướng dễ dàng hơn.
+
+Như các bạn thấy, trong bài viết này được chia thành 2 phần, mỗi phần lại có mục con. Mỗi một tiêu đề trên trang này có một liên kết neo và mục lục ở trên đầu bài viết bao gồm liên kết để bạn có thể chuyển đến các phần khác nhau một cách nhanh chóng.</li>
+</ul>
+</dd>
+</ol>
+</dl>
+</article>
+<hr>
+<article>
+<section>
+<header>
+<h1>2.1 Dựng websever trên máy cục bộ</h1>
+<h2>LAB 05</h2>
+
+</header>
+</section>
+</article>
+<hr>
+<p class="center"><a href="https://haclamthien.blogspot.com/p/1910127nhuvanhuulab01-body-background.html"><em>Go to the Bento's Hompage</em></a></p>
+</body>
+
+</html>

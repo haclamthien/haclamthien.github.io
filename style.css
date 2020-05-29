@@ -30,6 +30,7 @@ a{
 	background: url(image/header.jpg) no-repeat;
 	-webkit-border-radius: 0 0 15px 15px;
 	border: 1px solid black;
+	
 }
 #wrap-content #header #logo-text{
 	width: 100%;
@@ -75,7 +76,7 @@ ul{
 #wrap-content #menu ul li{
 	display: inline-block;
 	float: left;
-	width: 237.5px;
+	width: 190px;
 	height: 50px;
 	line-height: 50px;
 	border-top: 1px solid black;
@@ -83,15 +84,13 @@ ul{
 	border-right: 1px solid black;
 	color: #fff;
 	text-align: center;
-	position:relative;
 }
 #wrap-content #menu ul #home{
 	border-left: 1px solid black;
 	-webkit-border-radius: 15px 0 0 15px;
 }
-#wrap-content #menu ul #mini-project{
+#wrap-content #menu ul #java-script{
 	-webkit-border-radius: 0 15px 15px 0;
-	width: 241px;
 }
 #wrap-content #menu ul a:hover li{
 	background-color: red !important;
@@ -104,15 +103,15 @@ ul{
 	height: 200px;
 	margin: 0 auto;
 	position: fixed;
-	/*margin-bottom: 200px;*/
-	/*top: 0;
+	margin-bottom: 200px;
+	top: 0;
 }*/
 /*--content--*/
 
 /*home-conntent--*/
 #wrap-content #content #home-content{
 	width: 100%;
-	min-height: 400px;
+	min-height: 620px;
 	background-color: #fff;
 	border: 1px solid black;
 	-webkit-border-radius: 15px 15px 15px 15px;
@@ -130,26 +129,136 @@ ul{
 /*--html-content--*/
 #wrap-content #content #html-content{
 	width: 100%;
-	min-height: 400px;
-	background-color: #fff;
+	min-height: 620px;
+	background-color: red;
 	border: 1px solid black;
-	-webkit-border-radius: 15px 15px 15px 15px;
+	-webkit-border-radius: 25px 25px 25px 25px;
+}
+#wrap-content #content #html-content #html-header{
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	background-color: black;
+	color: red;
+	-webkit-border-radius: 25px 25px 25px 25px;
+}
+#wrap-content #content #html-content #html-header p{
+	font-size:24px;
+	padding-top: 7px;
+}
+#wrap-content #content #html-content a:hover #html-header{
+	background-color: #fff;
+	-webkit-transition: all 2s;
+}
+#wrap-content #content #html-content a:hover #html-header p{
+	color: black;
+}
+#wrap-content #content #html-content ul li{
+	width: 479px;
+	margin: 1px auto;
+	font-size: 16px;
+	height: 100px;
+	line-height: 100px;
+	background-color: red;
+	border: 2px solid black;
+	text-align: center;
+}
+#wrap-content #content #html-content ul a:hover li{
+	background-color: black;
+	-webkit-transition: all 2s;
+	color: red;
 }
 /*--css-content--*/
 #wrap-content #content #css-content{
 	width: 100%;
-	min-height: 400px;
-	background-color: #fff;
+	min-height: 620px;
+	background-color: red;
 	border: 1px solid black;
-	-webkit-border-radius: 15px 15px 15px 15px;
+	-webkit-border-radius: 25px 25px 25px 25px;
+}
+#wrap-content #content #css-content #css-header{
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	background-color: black;
+	color: red;
+	-webkit-border-radius: 25px 25px 25px 25px;
+}
+#wrap-content #content #css-content #css-header p{
+	font-size:24px;
+	padding-top: 7px;
+}
+#wrap-content #content #css-content a:hover #css-header{
+	background-color: #fff;
+	-webkit-transition: all 2s;
+}
+#wrap-content #content #css-content a:hover #css-header p{
+	color: black;
+}
+#wrap-content #content #css-content ul li{
+	width: 478px;
+	float: left;
+	font-size: 16px;
+	height: 100px;
+	line-height: 100px;
+	background-color: red;
+	border: 1px solid black;
+	text-align: center;
+}
+#wrap-content #content #css-content ul a:hover li{
+	background-color: black;
+	-webkit-transition: all 2s;
+	color: red;
 }
 /*--mini-project--*/
 #wrap-content #content #mini-project-content{
 	width: 100%;
-	min-height: 400px;
+	min-height: 620px;
+	background-color: red;
+	border: 1px solid black;
+	-webkit-border-radius: 25px 25px 25px 25px;
+}
+#wrap-content #content #mini-project-content #mini-project-header{
+	width: 100%;
+	height: 50px;
+	text-align: center;
+	background-color: black;
+	color: red;
+	-webkit-border-radius: 25px 25px 25px 25px;
+}
+#wrap-content #content #mini-project-content #mini-project-header p{
+	font-size:24px;
+	padding-top: 7px;
+}
+#wrap-content #content #mini-project-content a:hover #mini-project-header{
+	background-color: #fff;
+	-webkit-transition: all 2s;
+}
+#wrap-content #content #mini-project-content a:hover #mini-project-header p{
+	color: black;
+}
+#wrap-content #content #mini-project-content ul li{
+	width: 479px;
+	margin: 1px auto;
+	font-size: 16px;
+	height: 100px;
+	line-height: 100px;
+	background-color: red;
+	border: 2px solid black;
+	text-align: center;
+}
+#wrap-content #content #mini-project-content ul a:hover li{
+	background-color: black;
+	-webkit-transition: all 2s;
+	color: red;
+}
+/*--java-script--*/
+#wrap-content #content #java-script-content{
+	width: 100%;
+	min-height: 620px;
 	background-color: #fff;
 	border: 1px solid black;
-	-webkit-border-radius: 15px 15px 15px 15px;
+	-webkit-border-radius: 25px 25px 25px 25px;
 }
 
 /*--footer--*/
