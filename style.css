@@ -120,10 +120,11 @@ ul{
 }
 #wrap-content #content #home-content h2{
 	margin-top: 250px;
+	font-size: 36px;
 }
 #wrap-content #content #home-content p{
 	color: #fff;
-	font-size: 16px;
+	font-size: 26px;
 }
 
 /*--html-content--*/
